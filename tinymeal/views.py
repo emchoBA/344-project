@@ -7,3 +7,6 @@ def say_hello(request):
 
 def login_page(request):
     return render(request, 'loginscreen.html')
+
+def register_page(request):
+    return render(request, 'createacc.html')
