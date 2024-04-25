@@ -1,5 +1,5 @@
 from django.urls import path, include
-from tinymeal import views
+from tidymeal import views
 """
 URL configuration for djangoProject1 project.
 
@@ -22,7 +22,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.say_hello),
-    path('tinymeal/', views.say_hello),
+    path('tidymeal/', views.say_hello),
     path('login/', views.login_page),
     path('register/', views.register_page),
     path('userhome/', views.user_home_page),
