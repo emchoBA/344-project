@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>TIDY MEAL - Diet Recommendation</title>
+
+<style>
+.btn {
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btnhome{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btnlogin{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 90px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.btnhome:hover {
+  background-color: RoyalBlue;
+}
+.btnlogin:hover {
+  background-color: RoyalBlue;
+}
+.btnlogin2:hover {
+  background-color: RoyalBlue;
+}
+.btnacc:hover {
+  background-color: RoyalBlue;
+}
+
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 10px; 
+}
+
+.logo-text {
+  font-size: 300%;
+  font-family: tahoma;
+}
+
+.logo-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px; 
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.radio-label {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #00bef7;
+    cursor: pointer;
+}
+
+.radio-btn.selected {
+  background-color: RoyalBlue;
+  color: white;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0px;
+}
+
+.calories-container {
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.nutritional-values {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.empty-box {
+  height: 200px;
+  width: 400px;
+  border: 2px dashed #00bef7;
+  margin-top: 20px;
+  margin-left: 1000;
+}
+
+.meals-container {
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #00bef7;
+}
+
+table, th, td {
+  border: 1px solid #fff;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+th {
+  background-color: #2a8dd4;
+}
+
+</style>
+</head>
+<body>
+  <a href="/tinymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+  <button class="btn"><i class="fa fa-bars"></i> Settings</button>
+  <button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Username</button>
+  <div class="logo-container">
+    <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
+    <p class="logo-text">TIDY MEAL</p>
+  </div>
+
+  <hr color="#00bef7" style="margin-top: 30px;" />
+
+<div class="container">
+    <div class="info-container">
+        <div class="nutritional-values">
+            <h3>NUTRITIONAL VALUES</h3>
+        </div>
+        
+        <div class="empty-box"></div>
+        <div class="calories-container">
+            <h3>CALORIES</h3>
+            <div>
+                <span class="radio-label" >Weight Loss<br>Calories/days</span>
+                <span class="radio-label" >Weight Gain<br>Calories/days</span>
+                <span class="radio-label" >Weight Maintenance<br>Calories/days</span>
+                <span class="radio-label" >Muscle Building<br>Calories/days</span>
+            </div>
+        </div>
+          
+   
+
+    <div class="meals-container">
+      <h3>MEALS PLANS</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+            <th>Thursday</th>
+            <th>Friday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Breakfast: Oatmeal, Fruit<br>Lunch: Grilled Chicken, Salad<br>Dinner: Fish, Vegetables</td>
+            <td>Breakfast: Yogurt, Nuts<br>Lunch: Turkey Sandwich, Veggies<br>Dinner: Pasta, Sauce</td>
+            <td>Breakfast: Smoothie<br>Lunch: Tuna Salad, Bread<br>Dinner: Steak, Potatoes</td>
+            <td>Breakfast: Eggs, Toast<br>Lunch: Soup, Sandwich<br>Dinner: Chicken, Rice</td>
+            <td>Breakfast: Pancakes<br>Lunch: Wrap, Chips<br>Dinner: Pizza, Salad</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    
+  </div>
+
+
+</div>
+<hr color="#00bef7" style="margin-top: 10px;" />
+
+</body>
+</html>

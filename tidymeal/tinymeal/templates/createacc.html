@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  form {border: 3px solid #f1f1f1;}
+.btn {
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 50px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btnhome{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btnlogin{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 12px 90px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btnlogin2{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 14px 90px;
+  font-size: 16px;
+  cursor: pointer;
+  margin:65px;
+}
+.btnacc{
+  background-color: #00bef7;
+  border: none;
+  color: white;
+  padding: 14px 90px;
+  font-size: 16px;
+  cursor: pointer;
+
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.btnhome:hover {
+  background-color: RoyalBlue;
+}
+.btnlogin:hover {
+  background-color: RoyalBlue;
+}
+.btnlogin2:hover {
+  background-color: RoyalBlue;
+}
+.btnacc:hover {
+  background-color: RoyalBlue;
+}
+
+.item{
+height: 80px;
+width:80px;
+
+background-repeat: no-repeat;
+background-size: cover;
+position: absolute;
+      left: 580px;
+      top:60px;
+}
+
+
+input[type=text], input[type=password],input[type=email] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.buttonlogin3 {
+  background-color: #00bef7;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+}
+
+.buttonlogin3:hover {
+  opacity: 0.8;
+}
+
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 10%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+span.email {
+  float: right;
+  padding-top: 16px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 10px; 
+}
+
+.logo-text {
+  font-size: 300%;
+  font-family: tahoma;
+  margin-left: 10px;
+}
+.logo-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px; 
+}
+
+</style>
+<title>344 | Create Account</title>
+</head>
+<body>
+<a href="/tinymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+<button class="btn"><i class="fa fa-bars"></i> Settings</button>
+<a href="/login"><button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Login</button></a>
+<div class="logo-container">
+  <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
+  <p class="logo-text">TIDY MEAL</p>
+</div>
+<hr  color="#00bef7" style="margin-top: 30px;"/>
+
+<center>
+<form action="/userhome/" method="post" style="width:750px;">
+  {% csrf_token %}
+  <div class="imgcontainer">
+    <img src="img/acc.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>
+
+    <label for="email"><b>E-mail</b></label>
+    <input type="email" placeholder="Enter E-mail" name="email" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button class="btnacc"><i class="fa fa-cogs"></i> Create Account</button></a>
+
+  </div>
+</form>
+</center>
+<hr  color="#00bef7" />
+</body>
+</html>
