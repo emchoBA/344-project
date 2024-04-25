@@ -10,3 +10,12 @@ def login_page(request):
 
 def register_page(request):
     return render(request, 'createacc.html')
+
+def user_home_page(request):
+    return render(request, 'userhomepage.html')
+
+def displayInfopage(request):
+    return render(request, 'displayInfopage.html')
+
+def dietReccomendationpage(request):
+    return render(request, 'dietreccpage.html')
