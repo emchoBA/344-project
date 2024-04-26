@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 .btn {
-  background-color: #219ff4;
+  background-color: #00bef7;
   border: none;
   color: white;
   padding: 12px 50px;
@@ -13,7 +13,7 @@
   cursor: pointer;
 }
 .btnhome{
-  background-color: #219ff4;
+  background-color: #00bef7;
   border: none;
   color: white;
   padding: 12px 16px;
@@ -21,7 +21,7 @@
   cursor: pointer;
 }
 .btnlogin{
-  background-color: #219ff4;
+  background-color: #00bef7;
   border: none;
   color: white;
   padding: 12px 90px;
@@ -29,7 +29,7 @@
   cursor: pointer;
 }
 .btnlogin2{
-  background-color: #219ff4;
+  background-color: #00bef7;
   border: none;
   color: white;
   padding: 14px 90px;
@@ -38,14 +38,17 @@
   margin:65px;
 }
 .btnacc{
-  background-color: #219ff4;
+  background-color: #00bef7;
   border: none;
   color: white;
   padding: 14px 90px;
   font-size: 16px;
   cursor: pointer;
-
+  display: block;
+  margin: 0 auto; 
+  text-decoration: none; 
 }
+
 .btn:hover {
   background-color: RoyalBlue;
 }
@@ -62,16 +65,14 @@
   background-color: RoyalBlue;
 }
 
-
 .item{
-height: 80px;
-width:80px;
-
-background-repeat: no-repeat;
-background-size: cover;
-position: absolute;
-      left: 580px;
-      top:60px;
+  height: 80px;
+  width:80px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 580px;
+  top:60px;
 }
 
 .alert {
@@ -82,17 +83,37 @@ position: absolute;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 10px; 
+}
+
+.logo-text {
+  font-size: 300%;
+  font-family: tahoma;
+  margin-left: 10px; 
+}
+
+.logo-icon {
+  height: 60px;
+  width: 60px;
+  margin-right: 20px; 
+}
+
 </style>
 <title>344 | HomePage</title>
 </head>
 <body>
-<a href="/tidymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+<a href="/tinymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
 <button class="btn"><i class="fa fa-bars"></i> Settings</button>
 <a href="/login"><button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Login/Create Account</button></a>
-<div class="item" style="display: block; margin: auto; background-image: url(https://cdn-icons-png.flaticon.com/512/1514/1514935.png);">
+<div class="logo-container">
+  <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
+  <p class="logo-text">TIDY MEAL</p>
 </div>
-<p  style="font-size:300%" align="center" ><font face="tahoma">TIDY MEAL</font></p>
-<hr  color="#2baaff" />
+<hr  color="#00bef7" style="margin-top: 30px;" />
 <p  style="font-size:200%" align="center"><font face="tahoma">Welcome to Tidy Meal!</font></p>
 
 <center><div class="alert" style="font-size: 18px ">
@@ -104,8 +125,6 @@ position: absolute;
   <center><a href="/login"><button class="btnlogin2"><i class="fa fa-sign-in"></i> Login</button></a> &nbsp;
     <a href="/register"><button class="btnacc"><i class="fa fa-cogs"></i> Create Account</button></a>
 </center>
-<hr  color="#2baaff" />
+<hr  color="#00bef7" />
 </body>
 </html>
-
-
