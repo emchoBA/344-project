@@ -176,7 +176,7 @@ function validateForm() {
 
 <div class="container">
   <h2>DIET RECOMMENDATION</h2>
-  <form action="/displayInfo/" method="post" onsubmit="return validateForm()">
+  <form action="/displayInfo/" method="post" id="systemForm" onsubmit="return validateForm()">
     {% csrf_token %}
 
     <div class="input-group">
@@ -213,7 +213,7 @@ function validateForm() {
       </select>
     </div>
 
-    <button type="submit" class="btnacc">Generate</button>
+    <button type="submit" value="Submit" form="systemForm" class="btnacc">Generate</button>
   </form>
 </div>
 
