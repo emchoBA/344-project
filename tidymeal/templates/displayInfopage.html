@@ -114,10 +114,12 @@
 
 .empty-box {
   height: 200px;
-  width: 400px;
+  width: 1900px;
   border: 2px dashed #00bef7;
   margin-top: 20px;
   margin-left: 1000;
+  word-wrap: break-word;
+  overflow: auto;
 }
 
 .meals-container {
@@ -166,7 +168,9 @@ th {
             <h3>NUTRITIONAL VALUES</h3>
         </div>
         
-        <div class="empty-box"></div>
+        <div class="empty-box">
+            {{ recc_text }}
+        </div>
         <div class="calories-container">
             <h3>CALORIES</h3>
             <div>

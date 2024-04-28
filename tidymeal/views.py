@@ -1,5 +1,13 @@
 from django.shortcuts import render
+
+#from tidymeal import diet_recom
 from django.http import HttpResponse
+import joblib
+import pandas as pd
+import numpy
+from random import uniform as rnd
+
+from tidymeal.diet_recom import get_recommendations, custom_formatting
 
 #initial values are set as -1 for easy error debug
 user_age = -1
@@ -24,9 +32,10 @@ def displayInfopage(request):
     user_weight = request.POST.get('weight')
     user_height = request.POST.get('height')
 
-    #text = foo()  ## get string from AI
-    #context = {} ##use this to pass string text to displayinfo page
-    return render(request, 'displayInfopage.html')
+    context = {}
+    result_string = custom_formatting(get_recommendations(1500))
+    context['recc_text'] = result_string
+    return render(request, 'displayInfopage.html', context)
 
 def dietReccomendationpage(request):
     return render(request, 'dietreccpage.html')

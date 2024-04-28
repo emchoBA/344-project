@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 
-dataset = pd.read_csv("dataset.csv")
+dataset = pd.read_csv("static/dataset.csv")
 
 columns=['RecipeId','Name','CookTime','PrepTime','TotalTime','RecipeIngredientParts','Calories','FatContent','SaturatedFatContent','CholesterolContent','SodiumContent','CarbohydrateContent','FiberContent','SugarContent','ProteinContent','RecipeInstructions']
 dataset=dataset[columns]
@@ -28,7 +28,7 @@ prep_data=scaler.fit_transform(extracted_data.iloc[:,6:15].to_numpy())
 
 import joblib
 from sklearn.neighbors import NearestNeighbors
-loaded_model = joblib.load('saved_model.sav')
+loaded_model = joblib.load('static/saved_model.sav')
 neigh = loaded_model
 
 from sklearn.pipeline import Pipeline
