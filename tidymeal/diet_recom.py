@@ -62,4 +62,17 @@ def get_recommendations(total_calories):
     recommendations.append(list_of_strings)
   return recommendations
 
-print(get_recommendations(max_Calories))
+def custom_formatting(my_list):
+    result_string = ""
+    labels = ["breakfast:", "lunch:", "dinner:"]
+
+    for i, sublist in enumerate(my_list):
+        result_string += "\n"+labels[i] + "\n\n"  
+        for item in sublist:
+            result_string += f"({item[0]}, {item[1]}),\n "
+        result_string = result_string[:-2] + "]\n"
+    result_string = result_string[:-2]
+    return result_string
+
+result_string = custom_formatting(get_recommendations(1500))   
+print(result_string)
