@@ -58,7 +58,7 @@ def get_recommendations(total_calories):
     list_of_strings = []
     for index, row in list_of_recom.iterrows():
       row_of_strings = row.tolist()
-       list_of_strings.append([row_of_strings[1],str(row_of_strings[6])])
+      list_of_strings.append([row_of_strings[1],str(row_of_strings[6])])
     recommendations.append(list_of_strings)
   return recommendations
 
