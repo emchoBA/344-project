@@ -112,15 +112,25 @@
   margin-top: 0px;
 }
 
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Aralarında boşluk bırakarak yan yana sıralar */
+}
+
 .empty-box {
-  height: 200px;
-  width: 1900px;
-  border: 2px dashed #00bef7;
+  height: auto; /* İçeriğe göre yükseklik ayarla */
+  width: calc(33.33% - 20px); /* Ekran genişliğinin üçte biri */
+  border: 2px solid #00bef7; /* Çizgili yerine düz kenarlı kutu */
   margin-top: 20px;
-  margin-left: 1000;
   word-wrap: break-word;
   overflow: auto;
+  padding: 10px; /* İçeriğin etrafına boşluk ekle */
 }
+
+
+
+
 
 .meals-container {
   padding: 20px;
@@ -164,13 +174,31 @@ th {
 
 <div class="container">
     <div class="info-container">
-        <div class="nutritional-values">
-            <h3>NUTRITIONAL VALUES</h3>
+      <div class="nutritional-values">
+        <div class="row">
+            <div class="empty-box">
+                <h4>Breakfast</h4>
+                {% for item in breakfast_list %}
+                <p>{{ item.0 }}, {{ item.1 }}</p>
+                {% endfor %}
+            </div>
+            <div class="empty-box">
+                <h4>Lunch</h4>
+                {% for item in lunch_list %}
+                        <p>{{ item.0 }}, {{ item.1 }}</p>
+                {% endfor %}
+            </div>
+            <div class="empty-box">
+                <h4>Dinner</h4>
+                {% for item in dinner_list %}
+                        <p>{{ item.0 }}, {{ item.1 }}</p>
+                {% endfor %}
+            </div>
         </div>
-        
-        <div class="empty-box">
-            {{ recc_text }}
-        </div>
+    </div>
+    
+    
+      
         <div class="calories-container">
             <h3>CALORIES</h3>
             <div>

@@ -32,10 +32,17 @@ def displayInfopage(request):
     user_weight = request.POST.get('weight')
     user_height = request.POST.get('height')
 
-    context = {}
-    result_string = custom_formatting(get_recommendations(1500))
-    context['recc_text'] = result_string
+    result_list = get_recommendations(1500)
+    breakfast_list, lunch_list, dinner_list = custom_formatting(result_list)
+
+    context = {
+        'breakfast_list': breakfast_list,
+        'lunch_list': lunch_list,
+        'dinner_list': dinner_list
+    }
+
     return render(request, 'displayInfopage.html', context)
+
 
 def dietReccomendationpage(request):
     return render(request, 'dietreccpage.html')

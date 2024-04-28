@@ -63,16 +63,12 @@ def get_recommendations(total_calories):
   return recommendations
 
 def custom_formatting(my_list):
-    result_string = ""
-    labels = ["breakfast:", "lunch:", "dinner:"]
+    breakfast_list = my_list[0]
+    lunch_list = my_list[1]
+    dinner_list = my_list[2]
 
-    for i, sublist in enumerate(my_list):
-        result_string += "\n"+labels[i] + "\n\n"  
-        for item in sublist:
-            result_string += f"({item[0]}, {item[1]}),\n "
-        result_string = result_string[:-2] + "]\n"
-    result_string = result_string[:-2]
-    return result_string
+    return breakfast_list, lunch_list, dinner_list
+
 
 result_string = custom_formatting(get_recommendations(1500))   
 print(result_string)
