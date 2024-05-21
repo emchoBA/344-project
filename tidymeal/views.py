@@ -7,7 +7,7 @@ import pandas as pd
 import numpy
 from random import uniform as rnd
 
-from tidymeal.diet_recom import get_recommendations, custom_formatting
+from tidymeal.diet_recom import MealRecommender, custom_formatting
 
 #initial values are set as 1 for easy error debug
 
@@ -58,7 +58,8 @@ def displayInfopage(request):
     calories = (BRM * activity_multiplier) + plan_modifier
 
     print(calories)
-    result_list = get_recommendations(calories)
+    recommender = MealRecommender("static/dataset.csv", "static/saved_model.sav")
+    result_list = recommender.get_recommendations(calories) 
     breakfast_list, lunch_list, dinner_list = custom_formatting(result_list)
 
     context = {
