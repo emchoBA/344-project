@@ -6,6 +6,7 @@ from sklearn.neighbors import NearestNeighbors
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer
 from random import uniform as rnd
+import random
 import numpy as np
 
 class MealRecommender:
