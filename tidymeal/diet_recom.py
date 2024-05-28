@@ -50,7 +50,14 @@ class MealRecommender:
     
     def _generate_nutrition(self, meal, total_calories):
         if meal == 'breakfast':
-            return [total_calories * 0.20, rnd(0, 10), rnd(0, 4), rnd(0, 10), rnd(0, 20), rnd(0, 15), rnd(0, 10), rnd(0, 10), rnd(0, 20)]
+            breakfast_calories = rnd(50, 150)
+            total_calories -= breakfast_calories
+            rand = random.randint(0, 1)
+            nutrition_options = [
+                [breakfast_calories, 2.5, 1.3, 8.0, 29.8, 37.1, 3.6, 30.2, 3.2],
+                [breakfast_calories, 4.4, 2.3, 62.2, 59.3, 11.4, 0.3, 0.1, 3.9]
+            ]
+            return nutrition_options[rand]
         elif meal == 'lunch':
             return [total_calories * 0.40, rnd(20, 40), rnd(0, 4), rnd(0, 30), rnd(0, 400), rnd(40, 75), rnd(4, 20), rnd(0, 10), rnd(50, 175)]
         elif meal == 'dinner':
