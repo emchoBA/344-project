@@ -75,7 +75,6 @@
   top:60px;
 }
 
-
 .logo-container {
   display: flex;
   align-items: center;
@@ -98,17 +97,16 @@
 <title>344 | UserHomePage</title>
 </head>
 <body>
-<a href="/tidymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
-
-<button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Username</button></a>
+<a href="{% url 'userhome' %}"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+<a href="{% url 'logout' %}"><button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Logout</button></a>
 <div class="logo-container">
   <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
   <p class="logo-text">TIDY MEAL</p>
 </div>
 <hr  color="#00bef7"style="margin-top: 30px;" />
-<p style="font-size:200%" align="center"><font face="tahoma">WELCOME, USER</font></p>
+<p style="font-size:200%" align="center"><font face="tahoma">WELCOME, {{ username }}</font></p>
 <hr  color="#00bef7" />
-<a href="/dietrecc/" style="text-decoration: none;"><button class="btnacc"><i class="fa fa-cutlery"></i> Diet Recommendation</button></a>
+<a href="{% url 'dietrecc' %}" style="text-decoration: none;"><button class="btnacc"><i class="fa fa-cutlery"></i> Diet Recommendation</button></a>
 
 </body>
 </html>

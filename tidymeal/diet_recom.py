@@ -35,7 +35,7 @@ class MealRecommender:
         self.neigh = self.loaded_model
         transformer = FunctionTransformer(self.neigh.kneighbors, kw_args={'return_distance': False})
         self.pipeline = Pipeline([('std_scaler', self.scaler), ('NN', transformer)])
-        params = {'n_neighbors': 10, 'return_distance': False}
+        params = {'n_neighbors': 7, 'return_distance': False}
         self.pipeline.set_params(NN__kw_args=params)
     
     def get_recommendations(self, total_calories):

@@ -1,31 +1,17 @@
-from django.urls import path, include
-from tidymeal import views
-"""
-URL configuration for djangoProject1 project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# urls.py
 from django.contrib import admin
 from django.urls import path
+from tidymeal import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.say_hello),
-    path('tidymeal/', views.say_hello),
-    path('login/', views.login_page),
-    path('register/', views.register_page),
-    path('userhome/', views.user_home_page),
-    path('displayInfo/', views.displayInfopage),
-    path('dietrecc/', views.dietReccomendationpage)
+    path('', views.say_hello, name='homepage'),
+    path('login/', views.login_page, name='login'),
+    path('register/', views.register_page, name='register'),
+    path('userhome/', views.user_home_page, name='userhome'),
+    path('displayInfo/', views.displayInfopage, name='displayInfo'),
+    path('dietrecc/', views.dietReccomendationpage, name='dietrecc'),
+    path('api/register/', views.UserRegisterView.as_view(), name='api_register'),
+    path('api/login/', views.UserLoginView.as_view(), name='api_login'),
+    path('logout/', views.logout_view, name='logout'),
 ]

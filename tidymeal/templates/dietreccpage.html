@@ -164,9 +164,8 @@ function validateForm() {
 
 </head>
 <body>
-  <a href="/tidymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
-
-  <button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Username</button>
+  <a href="{% url 'userhome' %}"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+  <a href="{% url 'logout' %}"><button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Logout</button></a>
   <div class="logo-container">
     <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
     <p class="logo-text">TIDY MEAL</p>
@@ -176,7 +175,7 @@ function validateForm() {
 
 <div class="container">
   <h2>DIET RECOMMENDATION</h2>
-  <form action="/displayInfo/" method="post" id="systemForm" onsubmit="return validateForm()">
+  <form action="{% url 'displayInfo' %}" method="post" id="systemForm" onsubmit="return validateForm()">
     {% csrf_token %}
 
     <div class="input-group">
@@ -203,13 +202,6 @@ function validateForm() {
         <option value="low" selected>Weight Loss</option>
         <option value="medium">Weight Gain</option>
         <option value="high">Weight Maintenance</option>
-      </select>
-      <label for="meals">Meals per Day:</label>
-      <select id="meals" name="meals">
-        <option value="1" selected>2 Meal</option>
-        <option value="2">3 Meals</option>
-        <option value="3">4 Meals</option>
-        <option value="4">5 Meals</option>
       </select>
     </div>
 

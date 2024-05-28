@@ -31,8 +31,6 @@
   cursor: pointer;
 }
 
-
-
 .btn:hover {
   background-color: RoyalBlue;
 }
@@ -48,7 +46,6 @@
 .btnacc:hover {
   background-color: RoyalBlue;
 }
-
 
 .logo-container {
   display: flex;
@@ -128,10 +125,6 @@
   padding: 10px; /* İçeriğin etrafına boşluk ekle */
 }
 
-
-
-
-
 .meals-container {
   padding: 20px;
   border-radius: 5px;
@@ -162,9 +155,8 @@ th {
 </style>
 </head>
 <body>
-  <a href="/tidymeal"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
-
-  <button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Username</button>
+  <a href="{% url 'userhome' %}"><button class="btnhome"><i class="fa fa-home"></i> Home</button></a>
+  <a href="{% url 'logout' %}"><button class="btnlogin" style="float:right"><i class="fa fa-user"></i> Logout</button></a>
   <div class="logo-container">
     <img src="https://cdn-icons-png.flaticon.com/512/1514/1514935.png" alt="Logo" class="logo-icon">
     <p class="logo-text">TIDY MEAL</p>
@@ -172,75 +164,81 @@ th {
 
   <hr color="#00bef7" style="margin-top: 30px;" />
 
-<div class="container">
-    <div class="info-container">
-      <div class="nutritional-values">
-        <div class="row">
-            <div class="empty-box">
-                <h4>Breakfast</h4>
-                {% for item in breakfast_list %}
-                <p>{{ item.0 }}, {{ item.1 }}</p>
-                {% endfor %}
-            </div>
-            <div class="empty-box">
-                <h4>Lunch</h4>
-                {% for item in lunch_list %}
-                        <p>{{ item.0 }}, {{ item.1 }}</p>
-                {% endfor %}
-            </div>
-            <div class="empty-box">
-                <h4>Dinner</h4>
-                {% for item in dinner_list %}
-                        <p>{{ item.0 }}, {{ item.1 }}</p>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-    
-    
       
-        <div class="calories-container">
-            <h3>CALORIES</h3>
-            <div>
-                <span class="radio-label" >Weight Loss<br>Calories/days</span>
-                <span class="radio-label" >Weight Gain<br>Calories/days</span>
-                <span class="radio-label" >Weight Maintenance<br>Calories/days</span>
-                <span class="radio-label" >Muscle Building<br>Calories/days</span>
-            </div>
-        </div>
-          
-   
-
     <div class="meals-container">
-      <h3>MEALS PLANS</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thursday</th>
-            <th>Friday</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Breakfast: Oatmeal, Fruit<br>Lunch: Grilled Chicken, Salad<br>Dinner: Fish, Vegetables</td>
-            <td>Breakfast: Yogurt, Nuts<br>Lunch: Turkey Sandwich, Veggies<br>Dinner: Pasta, Sauce</td>
-            <td>Breakfast: Smoothie<br>Lunch: Tuna Salad, Bread<br>Dinner: Steak, Potatoes</td>
-            <td>Breakfast: Eggs, Toast<br>Lunch: Soup, Sandwich<br>Dinner: Chicken, Rice</td>
-            <td>Breakfast: Pancakes<br>Lunch: Wrap, Chips<br>Dinner: Pizza, Salad</td>
-          </tr>
-        </tbody>
+        <h3>MEAL PLANS</h3>
+        <table>
+          <thead>
+              <tr>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                  <th>Saturday</th>
+                  <th>Sunday</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.0.0 }}, {{ breakfast_list.0.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.0.0 }}, {{ lunch_list.0.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.0.0 }}, {{ dinner_list.0.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.1.0 }}, {{ breakfast_list.1.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.1.0 }}, {{ lunch_list.1.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.1.0 }}, {{ dinner_list.1.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.2.0 }}, {{ breakfast_list.2.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.2.0 }}, {{ lunch_list.2.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.2.0 }}, {{ dinner_list.2.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.3.0 }}, {{ breakfast_list.3.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.3.0 }}, {{ lunch_list.3.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.3.0 }}, {{ dinner_list.3.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.4.0 }}, {{ breakfast_list.4.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.4.0 }}, {{ lunch_list.4.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.4.0 }}, {{ dinner_list.4.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.5.0 }}, {{ breakfast_list.5.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.5.0 }}, {{ lunch_list.5.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.5.0 }}, {{ dinner_list.5.1 }}</p>
+                  </td>
+                  <td>
+                      <h4>Breakfast</h4>
+                      <p>{{ breakfast_list.6.0 }}, {{ breakfast_list.6.1 }}</p>
+                      <h4>Lunch</h4>
+                      <p>{{ lunch_list.6.0 }}, {{ lunch_list.6.1 }}</p>
+                      <h4>Dinner</h4>
+                      <p>{{ dinner_list.6.0 }}, {{ dinner_list.6.1 }}</p>
+                  </td>
+              </tr>
+          </tbody>
       </table>
-    </div>
-
-    
-  </div>
-
-
-</div>
-<hr color="#00bef7" style="margin-top: 10px;" />
-
 </body>
 </html>
